@@ -1,23 +1,15 @@
-<div class="container">
+<div class="intro">
   <h2>PepTalk</h2>
   <h3>Share Inspirational Quotes with Your Friends</h3>
 
-  <div id="signup">
-    Register
-    <form action="/users/new" method="post">
-      <p><input type="text" name="username" placeholder="username"></p>
-      <p><input type="text" name="first_name" placeholder="John"></p>
-      <p><input type="text" name="last_name" placeholder="Smith"></p>
-      <p><input type="submit"></p>
+    <% if @error %>
+      <div class="errors"><%= @error %></div>
+    <% end %>
+    <form class="signup-box" action="/users/new" method="post">
+        <input type="text" name="first_name" placeholder="John">
+        <input type="text" name="last_name" placeholder="Smith">
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit">
     </form>
-  </div>
-
-   <div id="login">
-    Log In
-    <form action="/users/new" method="post">
-      <p><input type="text" name="username" placeholder="username"></p>
-      <p><input type="password" name="password"></p>
-      <p><input type="submit" value="Log In"></p>
-    </form>
-  </div>
-
+</div>

@@ -1,9 +1,30 @@
-#login {
-  border: 1px solid black;
-  float: left;
+.intro {
+  background: url("../img/homepage_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
-#signup {
-  border: 1px solid black;
-  float: left;
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+.signup-box {
+  display: flex;
+  border: 1px solid red;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.signup-box input {
+  border: 1px solid blue;
+  height: 50px;
+  border-radius: 10px;
 }
