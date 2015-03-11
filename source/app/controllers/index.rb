@@ -32,3 +32,9 @@ get "/users/:user_name/wall" do
   @user = User.find_by(username: params[:user_name])
   erb :wall
 end
+
+post '/users/:user_name/wall/new' do
+  @new_quote = Quote.create(quote: params[:quote], author: params[:author])
+  current_user.quotes << @new_quote
+  redirect "/users/#{current_user.username}/wall"
+end

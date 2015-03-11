@@ -7,15 +7,28 @@
 </nav>
 
 <div class="user_profile_panel">
-  <div class="profile_picture">
-    <img src="" alt="profile_pic">
-  </div>
-  <ul>
-    <li>Username: <%=@user.username%></li>
-    <li>Bio:</li>
-  </ul>
+
+    <div class="profile_picture">
+      <img src="" alt="profile_pic">
+    </div>
+
+    <ul>
+      <li>Username: <%=@user.username%></li>
+      <li>Bio:</li>
+    </ul>
+
 </div>
+
 <div class="wall">
+  <% if current_user==@user %>
+  <div class="add_quote">
+    <form action="/users/<%= current_user.id %>/wall/new" method="post">
+      <input type="text" name="quote" placeholder="Add a New Quote Here">
+      <input type="text" name="author" placeholder="Author">
+      <input type="submit">
+    </form>
+  </div>
+  <% end%>
   <% @user.quotes.each do |quote| %>
     <div class="quote">
       <p>
