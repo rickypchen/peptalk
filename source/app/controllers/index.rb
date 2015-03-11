@@ -3,12 +3,25 @@ get '/' do
 end
 
 post '/users/new' do
-  @user = User.new(username: params[:username], first_name: params[:first_name], last_name: params[:last_name], password: params[:password_hash])
-  @user.save
-  flash[:error] = @user.errors.full_messages
-  redirect '/'
+  @new_user = User.new(username: params[:username], first_name: params[:first_name], last_name: params[:last_name], password: params[:password])
+  if @new_user && @new_user.save
+    redirect '/users'
+  else
+    flash[:registration_error] = @new_user.errors.full_messages
+    redirect '/'
+  end
 end
 
-get '/wall' do
+post '/sessions' do
+  @user = User.find_by(username: params[:username])
+  if @user && @user.authenticate(params[:password])
+      redirect '/users'
+  else
+    flash[:login_error] = "Invalid password/username"
+    redirect '/'
+  end
+end
+
+get '/users' do
   erb :wall
 end

@@ -4,8 +4,9 @@ helpers do
   end
 
   def display_errors
-    if flash[:error]
-      flash[:error].to_sentence
+    if flash[:registration_error]
+      flash[:registration_error].to_sentence
     end
   end
+
 end

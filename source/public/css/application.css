@@ -1,16 +1,40 @@
-.intro {
-  background: url("../img/homepage_background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
-}
-
 h2 {
   text-align: center;
 }
 
 h3 {
   text-align: center;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  float: right;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid red;
+}
+
+nav a#login-trigger {
+  color: white;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+nav .login-box-off {
+  display: none;
+}
+
+nav .login-box-on {
+  display: block;
+}
+
+.intro {
+  background: url("../img/homepage_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
 .signup-box {
@@ -29,3 +53,4 @@ h3 {
 .errors {
   color: red;
 }
+
