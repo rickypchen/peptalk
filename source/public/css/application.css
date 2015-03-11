@@ -91,3 +91,8 @@ div.quote p {
   position: absolute;
   margin-left: 10px;
 }
+
+/* logout */
+nav.logout {
+  float: right;
+}

@@ -1,3 +1,11 @@
+
+<nav class="logout">
+    <form action="/sessions/<%= current_user.id %>" method="post">
+      <input name="_method" type="hidden" value="delete" />
+      <input type="submit" value="Sign Out">
+    </form>
+</nav>
+
 <div class="user_profile_panel">
   <div class="profile_picture">
     <img src="" alt="profile_pic">
