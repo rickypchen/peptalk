@@ -9,8 +9,10 @@
 </div>
 <div class="wall">
   <% @user.quotes.each do |quote| %>
-  <ul>
-    <li><%=  quote.quote %></li>
-  </ul>
+    <div class="quote">
+      <p>
+        <%=  quote.quote %> - <%= quote.author %>
+      </p>
+    </div>
   <% end %>
 </div>
