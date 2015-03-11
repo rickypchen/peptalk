@@ -1,35 +1,37 @@
-# P10 Build Something Beautiful
+# Bands Example App
 
-##Learning Competencies
+> **Note**: The branch contains an example app built with DBC's Sinatra skeleton. If you're building a new app or challenge, you'll probably want to use the [master](/../../tree/master) branch, which doesn't include any example models, controllers, views or tests.
 
-  * Building a web application from scratch
-  * Managing the development process
-  *
+### Purpose
 
-##Summary
+1. Provides an example implementation of basic CRUD functionality, using the DBC Sinatra skeleton.
+2. Demonstrates that it is not **required** that all models in `app/models` be
+   `ActiveRecord` backed!
+3. Includes a suite of RSpect tests that demonstrate unit, controller and integration testing.
 
-  You've learned a lot in phase 2: Sinatra, Active Record, Heroku, RSpec, JavaScript, Agile, and much more. Each of these tools is useful in its own right, but together, they give you something much more powerful — the ability to build a web application from nothing.
+### Quickstart
 
-  For this challenge, your assignment is to build something. It can be as practical or trivial as you would want, as long as its a 100% functional, full-stack web application.
+1.  `bundle install`
+2.  `rake db:create`
+3.  `rake db:migrate`
+4.  `rake db:seed`
+5.  `shotgun config.ru`
+6.  Open [http://localhost:9393/bands](http://localhost:9393/bands)
 
-##Releases
+#### Running Tests
+**Note**: Be sure to run `rake db:test:prepare` before running tests.
+
+To run the entire suite of tests: `rspec`
+
+To run a specific example: `rspec spec/band_spec.rb`
 
 
-###Release 0: Decide on What to Build
+### Contributing
 
-You can build anything you want, provided that it meets the following requirements:
+We would love for you to help make the skeleton more awesome, There are three ways to contribute:
 
-- It has a database
-- It uses an API
-- It is styled
-- It utilizes JavaScript
-- It has meaningful test coverage
-- It is deployed
+1. Ask for a bug fix or enhancement!
+2. Submit a pull request for a bug fix or enhancement!
+3. Code review an open pull request!
 
-Once you've come up with an idea, get one of your teachers to approve it.
-
-###Release 1: Build it
-
-Once apporoved, start building your project. Be sure to submit a link to where we
-can see your site live.
-
+Be prepared to give and receive specific, actionable, and kind feedback!
