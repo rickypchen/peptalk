@@ -14,6 +14,7 @@ require 'pathname'
 require 'pg'
 require 'active_record'
 require 'logger'
+require 'rack-flash'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
@@ -35,6 +36,7 @@ configure do
 
   # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
+  use Rack::Flash
 end
 
 # Set up the controllers and helpers
