@@ -2,14 +2,13 @@
   <h2>PepTalk</h2>
   <h3>Share Inspirational Quotes with Your Friends</h3>
 
-    <% if @error %>
-      <div class="errors"><%= @error %></div>
-    <% end %>
+
     <form class="signup-box" action="/users/new" method="post">
-        <input type="text" name="first_name" placeholder="John">
-        <input type="text" name="last_name" placeholder="Smith">
-        <input type="text" name="username" placeholder="username">
-        <input type="password" name="password" placeholder="password">
+          <p class="errors"><%= display_errors %></p>
+          <input type="text" name="first_name" placeholder="John">
+          <input type="text" name="last_name" placeholder="Smith">
+          <input type="text" name="username" placeholder="username">
+          <input type="password" name="password" placeholder="password">
         <input type="submit">
     </form>
 </div>
