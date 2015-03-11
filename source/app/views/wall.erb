@@ -1,4 +1,16 @@
-<h2>Hello</h2>
-<div>
-
+<div class="user_profile_panel">
+  <div class="profile_picture">
+    <img src="" alt="profile_pic">
+  </div>
+  <ul>
+    <li>Username: <%=@user.username%></li>
+    <li>Bio:</li>
+  </ul>
+</div>
+<div class="wall">
+  <% @user.quotes.each do |quote| %>
+  <ul>
+    <li><%=  quote.quote %></li>
+  </ul>
+  <% end %>
 </div>

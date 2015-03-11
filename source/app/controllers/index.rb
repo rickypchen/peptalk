@@ -15,13 +15,14 @@ end
 post '/sessions' do
   @user = User.find_by(username: params[:username])
   if @user && @user.authenticate(params[:password])
-      redirect '/users'
+      redirect "/users/#{@user.username}/wall"
   else
     flash[:login_error] = "Invalid password/username"
     redirect '/'
   end
 end
 
-get '/users' do
+get "/users/:user_name/wall" do
+  @user = User.find_by(username: params[:user_name])
   erb :wall
 end

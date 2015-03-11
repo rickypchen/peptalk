@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :quotes
   validates_presence_of :username, :first_name, :last_name, :password
 
   validates :username, uniqueness: true

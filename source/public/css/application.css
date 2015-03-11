@@ -1,3 +1,4 @@
+/* intro page */
 h2 {
   text-align: center;
 }
@@ -54,3 +55,23 @@ nav .login-box-on {
   color: red;
 }
 
+/* user's home page */
+
+.user_profile_panel {
+  height: 100%;
+  width: 20%;
+  float: left;
+  border: 1px solid black;
+}
+
+.profile_picture {
+  height: 50px;
+  width: 50px;
+}
+
+.wall {
+  height: 100%;
+  width: 75%;
+  float: right;
+  border: 1px solid black;
+}
