@@ -5,7 +5,8 @@ end
 post '/users/new' do
   @new_user = User.new(username: params[:username], first_name: params[:first_name], last_name: params[:last_name], password: params[:password])
   if @new_user && @new_user.save
-    redirect '/users'
+    session[:user_id] = @new_user.id
+    redirect "/users/#{@new_user.username}/wall"
   else
     flash[:registration_error] = @new_user.errors.full_messages
     redirect '/'

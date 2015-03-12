@@ -5,5 +5,4 @@ $(document).ready(function() {
     $('div.login-box-off').toggleClass("login-box-on");
   });
 
-
 });

@@ -18,6 +18,7 @@ gem 'rake'
 gem 'bcrypt'
 gem 'shotgun'
 gem 'dotenv'
+gem 'soundcloud'
 
 group :test do
   gem 'shoulda-matchers'
