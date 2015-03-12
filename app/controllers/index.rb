@@ -1,4 +1,5 @@
 get '/' do
+  User.all
   erb :index
 end
 
@@ -38,4 +39,13 @@ post '/users/:user_name/wall/new' do
   @new_quote = Quote.create(quote: params[:quote], author: params[:author])
   current_user.quotes << @new_quote
   redirect "/users/#{current_user.username}/wall"
+end
+
+get '/follow/:user_name' do
+  new_motivator = User.find_by(username: params[:username])
+  p params[:username]
+  # my_account = User.find(session[:user_id])
+  # my_account.motivators <<
+  p new_motivator
+  redirect "/"
 end

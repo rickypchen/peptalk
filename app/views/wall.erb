@@ -11,11 +11,22 @@
     <div class="profile_picture">
       <img src="" alt="profile_pic">
     </div>
-
+    <form action="/follow/<%=@user.username%>" method="get">
+      <input type="submit" value="Follow">
+    </form>
     <ul>
       <li>Username: <%=@user.username%></li>
       <li>Bio:</li>
     </ul>
+
+    <div class="motivators">
+      <p>People who inspire me:</p>
+      <ul>
+        <%@user.motivators.each do |motivator| %>
+        <li><%= motivator.username%></li>
+        <% end%>
+      </ul>
+    </div>
 
 </div>
 
