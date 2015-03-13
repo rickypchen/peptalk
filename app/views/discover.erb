@@ -21,7 +21,10 @@
 </nav>
 
 <h2><%=question%></h2>
-
+<form action="/search" method="get">
+<input type="text" name="query" placeholder="Search for a soundcloud clip here">
+<input type="submit">
+</form>
 <div class="discover">
 <ul>
   <% @quotes.each do |quote| %>

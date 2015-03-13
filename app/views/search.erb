@@ -1,0 +1,36 @@
+
+
+<nav class="user_nav">
+  <ul>
+      <li class="logo">PepTalk</li>
+      <li>
+      <form action="/users/<%=current_user.username%>/wall" method="get">
+      <input type="submit" value="My Page">
+    </form>
+      </li>
+    <li>
+      <form action="/discover" method="get">
+        <input type="submit" value="Discover">
+      </form>
+    </li>
+    <li>
+      <form action="/sessions/<%= current_user.id %>" method="post">
+        <input name="_method" type="hidden" value="delete" />
+        <input type="submit" value="Sign Out">
+      </form>
+    </li>
+  </ul>
+</nav>
+
+<h2>These are your search results:</h2>
+<div>
+  <ul>
+    <% @searches.each do |link, speech| %>
+    <li><%= speech['html'] %><br><form action="/users/<%= current_user.username%>/wall/newspeech" method="post">
+        <input type="text" name="url" placeholder="Add a soundcloud url here" value = "<%=link%>">
+        <input type="text" name="author" placeholder="Author">
+        <input type="submit" value="add to my collection"></li>
+      </form>
+    <% end %>
+  </ul>
+</div>
