@@ -1,9 +1,18 @@
 
 <nav class="logout">
-    <form action="/sessions/<%= current_user.id %>" method="post">
-      <input name="_method" type="hidden" value="delete" />
-      <input type="submit" value="Sign Out">
-    </form>
+  <ul>
+    <li>
+      <form action="/discover" method="get">
+        <input type="submit" value="Discover">
+      </form>
+    </li>
+    <li>
+      <form action="/sessions/<%= current_user.id %>" method="post">
+        <input name="_method" type="hidden" value="delete" />
+        <input type="submit" value="Sign Out">
+      </form>
+    </li>
+  </ul>
 </nav>
 
 <div class="user_profile_panel">
@@ -11,11 +20,12 @@
     <div class="profile_picture">
       <img src="" alt="profile_pic">
     </div>
-    <form action="/follow/<%=@user.username%>" method="get">
-      <input type="submit" value="Follow">
-    </form>
+    <% unless current_user==@user %>
+    <button class="follow">Follow</button>
+    <% end %>
     <ul>
-      <li>Username: <%=@user.username%></li>
+      Username:
+      <li class="user"><%=@user.username%></li>
       <li>Bio:</li>
     </ul>
 

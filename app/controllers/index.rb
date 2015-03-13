@@ -30,6 +30,12 @@ delete '/sessions/:user_id' do
   redirect '/'
 end
 
+get "/discover" do
+  @users = User.all
+  @quotes = Quote.all
+  erb :discover
+end
+
 get "/users/:user_name/wall" do
   @user = User.find_by(username: params[:user_name])
   erb :wall
@@ -42,10 +48,8 @@ post '/users/:user_name/wall/new' do
 end
 
 get '/follow/:user_name' do
-  new_motivator = User.find_by(username: params[:username])
-  p params[:username]
-  # my_account = User.find(session[:user_id])
-  # my_account.motivators <<
-  p new_motivator
-  redirect "/"
+  @motivator = User.find_by(username: params[:user_name])
+
+  current_user.motivators << @motivator
+  redirect "/users/#{current_user.username}/wall"
 end

@@ -92,7 +92,16 @@ div.quote p {
   margin-left: 10px;
 }
 
-/* logout */
+/* nav bar after login */
 nav.logout {
   float: right;
+}
+
+nav.logout ul li {
+  display: inline-block;
+}
+
+/* follow button */
+button.following {
+  background-color: #3366FF;
 }

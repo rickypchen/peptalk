@@ -1,0 +1,30 @@
+<nav class="logout">
+  <ul>
+    <li>
+    <form action="/users/<%=current_user.username%>/wall" method="get">
+    <input type="submit" value="My Page">
+  </form>
+    </li>
+    <li>
+      <form action="/discover" method="get">
+        <input type="submit" value="Discover">
+      </form>
+    </li>
+    <li>
+      <form action="/sessions/<%= current_user.id %>" method="post">
+        <input name="_method" type="hidden" value="delete">
+        <input type="submit" value="Sign Out">
+      </form>
+    </li>
+  </ul>
+</nav>
+
+<h2>What Inspires You?</h2>
+
+<div class="discover">
+<ul>
+  <% @quotes.each do |quote|%>
+  <li><%= quote.quote%></li>
+  <% end%>
+</ul>
+</div>
