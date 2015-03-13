@@ -37,7 +37,7 @@
       <p>People who inspire me:</p>
       <ul>
         <%@user.motivators.each do |motivator| %>
-        <li><%= motivator.username%></li>
+        <li><a href="/users/<%= motivator.username%>/wall"><%= motivator.username%></a></li>
         <% end%>
       </ul>
     </div>
