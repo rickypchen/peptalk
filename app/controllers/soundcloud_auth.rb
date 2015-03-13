@@ -24,5 +24,9 @@ end
 get '/soundcloud/user' do
   client = Soundcloud.new(:access_token => session[:token])
   current_user = client.get('/me')
-  puts current_user.username
+  userinfo = current_user.to_json
+  userinfo = JSON.parse(userinfo)
+  @user = User.find_or_create_by(username: userinfo["username"], first_name: userinfo["first_name"], last_name: userinfo["last_name"])
+  session[:user_id] = @user.id
+  redirect "/users/#{@user.username}/wall"
 end

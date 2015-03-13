@@ -1,6 +1,11 @@
 
 <nav class="logout">
   <ul>
+      <li>
+      <form action="/users/<%=current_user.username%>/wall" method="get">
+      <input type="submit" value="My Page">
+    </form>
+      </li>
     <li>
       <form action="/discover" method="get">
         <input type="submit" value="Discover">
@@ -26,7 +31,6 @@
     <ul>
       Username:
       <li class="user"><%=@user.username%></li>
-      <li>Bio:</li>
     </ul>
 
     <div class="motivators">
@@ -34,6 +38,15 @@
       <ul>
         <%@user.motivators.each do |motivator| %>
         <li><%= motivator.username%></li>
+        <% end%>
+      </ul>
+    </div>
+
+    <div class="followers">
+      <p>Followers:</p>
+      <ul>
+        <%@user.followers.each do |follower| %>
+        <li><%= follower.username%></li>
         <% end%>
       </ul>
     </div>
@@ -50,11 +63,12 @@
     </form>
   </div>
   <% end%>
-  <% @user.quotes.each do |quote| %>
-    <div class="quote">
-      <p>
-        <%=  quote.quote %> - <%= quote.author %>
-      </p>
+  <div class="discover">
+    <ul>
+      <% @user.quotes.each do |quote| %>
+      <li><%=  quote.quote %> - <%= quote.author %></li>
+      <% end %>
+    </ul>
     </div>
-  <% end %>
+
 </div>

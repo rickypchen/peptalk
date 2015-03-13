@@ -20,4 +20,5 @@ $(document).ready(function() {
       $('button.follow').text("Following");
     });
   });
+
 });

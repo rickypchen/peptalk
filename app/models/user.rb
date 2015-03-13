@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :being_followed, :class_name => "Motivation", :foreign_key => "motivator_id"
   has_many :followers, :through => :being_followed, :source => :follower
 
-  validates_presence_of :username, :first_name, :last_name, :password
+  validates_presence_of :username, :first_name, :last_name
 
   validates :username, uniqueness: true
 
