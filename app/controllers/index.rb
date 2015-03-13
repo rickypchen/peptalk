@@ -53,3 +53,4 @@ get '/follow/:user_name' do
   current_user.motivators << @motivator
   redirect "/users/#{current_user.username}/wall"
 end
+

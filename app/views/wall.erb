@@ -1,6 +1,7 @@
 
-<nav class="logout">
+<nav class="user_nav">
   <ul>
+      <li class="logo">PepTalk</li>
       <li>
       <form action="/users/<%=current_user.username%>/wall" method="get">
       <input type="submit" value="My Page">
@@ -23,7 +24,7 @@
 <div class="user_profile_panel">
 
     <div class="profile_picture">
-      <img src="" alt="profile_pic">
+      <img src="<%=@user.profile_image%>" alt="profile_pic">
     </div>
     <% unless current_user==@user %>
     <button class="follow">Follow</button>
@@ -55,9 +56,15 @@
 
 <div class="wall">
   <% if current_user==@user %>
-  <div class="add_quote">
-    <form action="/users/<%= current_user.id %>/wall/new" method="post">
+  <h3 class="welcome">Hey there, <%=@user.first_name%>!</h3>
+  <div class="add_inspiration">
+    <form action="/users/<%= current_user.username %>/wall/new" method="post">
       <input type="text" name="quote" placeholder="Add a New Quote Here">
+      <input type="text" name="author" placeholder="Author">
+      <input type="submit">
+    </form>
+    <form action="/users/<%= current_user.username%>/wall/newspeech" method="post">
+      <input type="text" name="url" placeholder="Add a soundcloud url here">
       <input type="text" name="author" placeholder="Author">
       <input type="submit">
     </form>
@@ -70,5 +77,4 @@
       <% end %>
     </ul>
     </div>
-
 </div>

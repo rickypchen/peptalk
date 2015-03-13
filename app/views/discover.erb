@@ -1,5 +1,6 @@
-<nav class="logout">
+<nav class="user_nav">
   <ul>
+    <li class="logo">PepTalk</li>
     <li>
     <form action="/users/<%=current_user.username%>/wall" method="get">
     <input type="submit" value="My Page">
@@ -19,7 +20,7 @@
   </ul>
 </nav>
 
-<h2>What Inspires You?</h2>
+<h2><%=question%></h2>
 
 <div class="discover">
 <ul>

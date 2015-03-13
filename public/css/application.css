@@ -1,4 +1,6 @@
 /* intro page */
+
+
 nav {
   height: 50px;
   display: flex;
@@ -7,9 +9,10 @@ nav {
 h2 {
   font-size: 5em;
   margin: 0 auto;
+  text-align: center;
 }
 
-h3 {
+h3.slogan {
   font-size: 2em;
   position: absolute;
   top: 30%;
@@ -33,11 +36,11 @@ nav a#login-trigger {
   text-decoration: none;
 }
 
-nav .login-box-off {
+.login-box-off {
   display: none;
 }
 
-nav .login-box-on {
+.login-box-on {
   display: block;
 }
 
@@ -74,9 +77,9 @@ nav .login-box-on {
   clear: both;
 }
 
-.profile_picture {
-  height: 50px;
-  width: 50px;
+.profile_picture img {
+  height: 50%;
+  width: 50%;
 }
 
 .wall {
@@ -86,13 +89,31 @@ nav .login-box-on {
   background-color: #F0F0F0;
 }
 
-/* nav bar after login */
-nav.logout {
-  float: right;
+.add_inspiration {
+  margin: 10px;
+  padding: 10px;
 }
 
-nav.logout ul li {
+/* nav bar after login */
+h3.welcome {
+  font-size: 3em;
+  margin: 0 auto;
+}
+
+nav.user_nav {
+  display: flex;
+}
+
+nav.user_nav ul {
+    background-color: white;
+}
+
+nav.user_nav ul li {
   display: inline-block;
+}
+
+nav.user_nav ul li.logo {
+  font-size: 3em;
 }
 
 /* follow button */
