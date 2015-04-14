@@ -21,17 +21,20 @@
 </nav>
 
 <h2><%=question%></h2>
-<form action="/search" method="get">
-<input type="text" name="query" placeholder="Search for a soundcloud clip here">
-<input type="submit">
-</form>
-<div class="discover">
-<ul>
-  <% @quotes.each do |quote| %>
-  <li><%= quote.quote%> - <%= quote.author%>
-    <p><a href="/users/<%=@users.find(quote.user_id).username%>/wall"><%= User.find(quote.user_id).username%></a></p></li>
 
+<div class="search-bar">
+  <form action="/search" method="get">
+    <input class="soundcloud-search" type="text" name="query" placeholder="Search for a soundcloud clip here">
+    <input type="submit">
+  </form>
+</div>
+
+<div class="discover">
+  <ul>
+  <% @quotes.each do |quote| %>
+    <li><%= quote.quote%> - <%= quote.author%>
+    <p><a href="/users/<%=@users.find(quote.user_id).username%>/wall"><%= User.find(quote.user_id).username%></a></p></li>
   <% end%>
-</ul>
+  </ul>
 </div>
 

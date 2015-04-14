@@ -51,21 +51,30 @@ nav a#login-trigger {
   height: 100%;
 }
 
-.signup-box {
-  margin-right: -50%;
+.banner {
+  background-color:rgba(0, 0, 0, 0.5);
   top: 60%;
-  left: 50%;
   position: absolute;
-  transform: translate(-50%, -50%)
+  width: 100%;
+  height: 40%;
+}
+
+form.signup-box {
+  margin: 0 auto;
+  width: 90%;
 }
 
 .signup-box input {
-  height: 45px;
-  border-radius: 10px;
+  height: 40px;
+  text-align: center;
 }
 
 .errors {
   color: red;
+}
+
+.instructions {
+  color: white;
 }
 
 /* user's home page */
@@ -146,3 +155,20 @@ list-style: none;
   text-align: right;
 }
 
+.search-bar {
+  margin: 0 auto;
+}
+
+.search-bar input {
+  align: center;
+  height: 40px;
+
+}
+
+.search-bar .soundcloud-search {
+  width: 400px;
+}
+
+.search-results ul li {
+  padding-top: 20px;
+}

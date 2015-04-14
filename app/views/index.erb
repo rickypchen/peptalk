@@ -8,9 +8,8 @@
       </form>
     </li>
     <li id="login">
-    <a id="login-trigger" href="#">
-    Log In  <span>▼</span>
-    </a>
+      <button id="login-trigger">PepTalk Sign In</button>
+
     <div class="login-box-off">
       <p class="errors"><%= flash[:login_error] %></p>
       <form action="/sessions" method="post">
@@ -24,13 +23,16 @@
   </ul>
 </nav>
 
-    <h3 class="slogan">Share Inspirational Quotes and Speeches with Your Friends</h3>
+<h3 class="slogan">Share Inspirational Quotes and Speeches with Your Friends</h3>
+    <div class="banner">
     <form class="signup-box" action="/users/new" method="post">
           <p class="errors"><%= display_errors %></p>
+          <p class="instructions">Create an account here:</p>
           <input type="text" name="first_name" placeholder="John">
           <input type="text" name="last_name" placeholder="Smith">
           <input type="text" name="username" placeholder="username">
           <input type="password" name="password" placeholder="password">
         <input type="submit">
     </form>
+    </div>
 </div>
