@@ -3,7 +3,7 @@ get '/auth/soundcloud/callback' do
   client = Soundcloud.new({
     :client_id => ENV['SOUNDCLOUND_CLIENT_KEY'],
     :client_secret => ENV['SOUNDCLOUD_CLIENT_SECRET'],
-    :redirect_uri => 'http://localhost:9393/soundcloud/callback'
+    :redirect_uri => 'http://peptalk.herokuapp.com/soundcloud/callback'
                           })
 
   redirect client.authorize_url
@@ -13,7 +13,7 @@ get '/soundcloud/callback' do
   client = Soundcloud.new({
     :client_id => ENV['SOUNDCLOUND_CLIENT_KEY'],
     :client_secret => ENV['SOUNDCLOUD_CLIENT_SECRET'],
-    :redirect_uri => 'http://localhost:9393/soundcloud/callback'
+    :redirect_uri => 'http://peptalk.herokuapp.com/soundcloud/callback'
                           })
   code = params[:code]
   access_token = client.exchange_token(:code => code)
