@@ -72,7 +72,12 @@
   <div class="discover">
     <ul>
       <% @user.quotes.each do |quote| %>
+      <% unless quote.quote =~ /^http/%>
       <li><%=  quote.quote %> - <%= quote.author %></li>
+      <% else %>
+      <% client = Soundcloud.new(:client_id => ENV['SOUNDCLOUND_CLIENT_KEY']) %>
+      <li><%=  client.get('/oembed', :url => quote.quote, :maxheight => 166)['html'] %> - <%= quote.author %></li>
+      <% end %>
       <% end %>
     </ul>
     </div>
