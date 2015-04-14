@@ -32,8 +32,14 @@
 <div class="discover">
   <ul>
   <% @quotes.each do |quote| %>
-    <li><%= quote.quote%> - <%= quote.author%>
-    <p><a href="/users/<%=@users.find(quote.user_id).username%>/wall"><%= User.find(quote.user_id).username%></a></p></li>
+    <% unless quote.quote =~ /^http/%>
+      <li><%=  quote.quote %> - <%= quote.author %>
+        <p><a href="/users/<%=@users.find(quote.user_id).username%>/wall"><%= User.find(quote.user_id).username%></a></p></li>
+      <% else %>
+      <% client = Soundcloud.new(:client_id => ENV['SOUNDCLOUND_CLIENT_KEY']) %>
+      <li><%=  client.get('/oembed', :url => quote.quote, :maxheight => 166)['html'] %> - <%= quote.author %>
+      <p><a href="/users/<%=@users.find(quote.user_id).username%>/wall"><%= User.find(quote.user_id).username%></a></p></li>
+      <% end %>
   <% end%>
   </ul>
 </div>
